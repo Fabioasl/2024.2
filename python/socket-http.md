@@ -30,6 +30,25 @@
    4. 10 cliente simultâneos
 6. analizar e explicar o comportamento do cliente e do **servidor com thread** para cada um dos 4 casos acima
 7. se tiver diferença no funcionamento dos servidores **sem** e **com** threads, analisar a diferença
+ 
+## Resposta Questão 01
+O servidor inicia na porta 8000 e fica aguardando conexões, quando algum acesso é feito no http://localhost:8000 no navegador o servidor processa essa requisição e se deu tudo certo o servidor responde com o código 200 OK depois processa o conteúdo do html e envia a pagina com o que tinha no html.
+
+## Resposta Questão 02/03
+
+   1. O cliente se conecta ao servidor por meio de uma conexão com o localhost na porta 8000, após isso faz uma requisição GET, o servidor processa essa requisição e se deu tudo certo o servidor envia o código 200 OK, o contéudo html é exibido e depois a conexão é fechada.
+   2. Os dois cliente tentam se conectar ao mesmo tempo, porém como o servidor nao possui threads apenas uma requisição é realizada, logo o servidor aceita a primeira requisição e faz todo o processo enquanto isso o segundo cliente fica esperando que a primeira requisição acabe para que o servidor processe a sua requisição.
+   3. O mesmo acontece para os cinco clientes com a única diferença é que o tempo de espera pode ser maior entre eles já que o servidor processa as requisições por ordem de chegada e cada requisição pode ter um tempo variado como por exemplo se cada requisição durar 500ms o quinto cliente terá que esperar 2,5segundos para ter sua requisição atendida.
+   4. Por fim o mesmo processo acima se repete para os 10 clientes com a diferença do tempo entre as requisições que pode variar de acordo com a velocidade que o servidor processou as requisições dos usuários.
+
+## Resposta da questão 4/5/6
+   1. A requisição é processa imediatamente pois tem apenas 1 pessoa tentando acessar o site o servidor processa a requisição com um tempo de resposta rápido.
+   2. As duas requisições são processadas ao mesmo tempo onde o servidor processa as duas quase que simultaneamente e ainda mantém um tempo de resposta rápido
+   3. Nesse caso o servidor irá criar 5 threads para que ele possa processar as requisições simultaneamente e ele ainda consegue manter um tempo de resposta rápido para os clientes.
+   4. Por fim para o servidor criar as 10 conexoes ao mesmpo tempo, podendo haver um pequeno aumento no tempo de resposta caso o processamento estiver pesado, porém devido ao uso das threads nenhum cliente fica na lista de espera.
+
+## Resposta da questão 7
+A principal diferença entre o funcionamnto dos servidores **com** e **sem** threads é que nos servidores os quais utilizam das threads é possível que o servidor processe várias requisições ao mesmo tempo em um pequeno espaço de tempo variando caso o processamento esteja pesado e nenhuma pessoa fica na lista de espera, já nos servidores que não possuem as threads as requisiçoes são processadas por ordem de chegada e podem variar de acordo com o tempo de processamento por exemplo: se eu tenho 5 clientes e um processamento demorou 500ms o quinto cliente tem que espera 2,5 segundos para que sua requisição seja processada pelo servido.
 
 
 **data da entrega** 13/02/2025
