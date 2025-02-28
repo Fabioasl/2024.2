@@ -4,7 +4,7 @@
 - **Disciplina**: Sistemas Operacionais (SO) do curso de TADS (Superior em Tecnologia em Análise e Desenvolvimento de Sistemas) no CNAT-IFRN (Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte - Campus Natal-Central).
 - **professor**: [Leonardo A. Minora](https://github.com/leonardo-minora)
 - **Local da visita técnica**: Datacenter do IFRN
-- **Aluno**: 
+- **Aluno**: [Fabio Alexandre de Souza Lucena Filho](https://github.com/Fabioasl) 
 
 ## Introdução
 O que é o IFRN?
